@@ -2,7 +2,7 @@
 
 [Project][1] | [Repository][2] | [Mailing Lists][3] | [Tickets][4]
 
-Subscribe by sending an e-mail to [~kells/ruby-data-class-lightning-talk+subscribe@lists.sr.ht][3].
+Subscribe by sending an e-mail to [~kells/ruby-data-class-lightning-talk+subscribe@lists.sr.ht][3.1].
 
 
 ## Overview
@@ -23,6 +23,7 @@ Suggested Git Configuration Adjustments:
 
 [1]: https://sr.ht/~kells/you-might-want-a-data-object-talk
 [2]: https://git.sr.ht/~kells/railsconf2025-lightning-talk/
-[3]: mailto:~kells/ruby-data-class-lightning-talk@lists.sr.ht
+[3]: https://lists.sr.ht/~kells/ruby-data-class-lightning-talk
+[3.1]: mailto:~kells/ruby-data-class-lightning-talk+subscribe@lists.sr.ht
 [4]: https://todo.sr.ht/~kells/lightning-talk
 
