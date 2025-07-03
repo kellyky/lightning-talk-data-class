@@ -1,10 +1,12 @@
 # Data class vs. Struct class
 
-The main difference between instances of Data and Struct is mutability:
+In practice, a main difference between instances of Data and Struct is mutability:
 - Instances of Data are immutable
 - Instances of Struct are mutable
 
-## Use
+Data also has fewer (and different) 'built-in' methods than Struct.
+
+## Create New Instance
 
 ### Data
 
@@ -12,25 +14,58 @@ The main difference between instances of Data and Struct is mutability:
 >> House = Data.define(:rooms, :area, :floors)
 >> ranch = House.new(rooms: 5, area: 1200, floors: 1)
 => #<data House rooms=5, area=1200, floors=1>
+```
 
-# Attempt to Renovate...
+### Struct
 
+```irb
+>> House = Struct.new(:rooms, :area, :floors, keyword_init: true)
+>> ranch = House.new(rooms: 5, area: 1200, floors: 1)
+=> #<struct House rooms=5, area=1200, floors=1>
+```
+
+## Mutability: Attempt to Renovate the house...
+
+### Data
+
+```irb
+>> House = Data.define(:rooms, :area, :floors)
+>> ranch = House.new(rooms: 5, area: 1200, floors: 1)
+=> #<data House rooms=5, area=1200, floors=1>
 >> ranch.floors = 2
 (irb):3:in `<main>': undefined method `floors=' for an instance of House (NoMethodError)
 ```
 
-The attribute values (once created) are immutable.
-Attempting to modify an attribute raises NoMethodError.
+This tells us there is no 'setter' method to use.
 
-While we cannot update the `ranch` object to 2 floors,
-we _can_ create a new object from `ranch` that does have 2 floors:
+If we try to define a setter method on `House` and update that value, `FrozenError` is raised.
 
 ```irb
->> bungalow = ranch.with(floors: 2)
+>> House = Data.define(:rooms, :area, :floors) do
+>>   def floors=(quantity)
+>>     @floors = quantity
+>>   end
+>> end
+=> House
+>> cottage = House.new(rooms: 5, area: 700, floors: 1)
+=> #<data House rooms=5, area=700, floors=1>
+>> cottage.floors = 2
+(irb):21:in `floors=': can't modify frozen House: #<data House rooms=5, area=700, floors=1> (FrozenError)
+```
+
+But what we _can_ do with a Data object is clone it and update any of the attribute values.
+
+```irb
+>> House = Data.define(:rooms, :area, :floors)
+>> cottage = House.new(rooms: 5, area: 1200, floors: 1)
+=> #<data House rooms=5, area=1200, floors=1>
+>> two_story_cottage = cottage.with(floors: 2)
 => #<data House rooms=5, area=1200, floors=2>
 ```
 
 ### Struct
+
+With Struct, we can renovate.
 
 ```irb
 >> House = Struct.new(:rooms, :area, :floors, keyword_init: true)
@@ -41,8 +76,6 @@ we _can_ create a new object from `ranch` that does have 2 floors:
 >> ranch
 => #<struct House rooms=5, area=1200, floors=2>
 ```
-
-With Struct, we can renovate.
 
 ## Built-in Methods
 
