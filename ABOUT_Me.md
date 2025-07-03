@@ -16,7 +16,6 @@ About 2 years, professionally.
 I am actively looking for my next opportunity, and any leads are greatly appreciated!
 
 - Backend Developer
-- Junior to Mid-level
 - Working with Ruby and/or Ruby on Rails
 - Developing APIs
 - Working with a team invested in mentorship and collaboration, where I can also share my learnings and growth
@@ -35,7 +34,6 @@ Current projects/work include:
 ## What are your hobbies / what do you like to do outside of work?
 
 Cosmetic and skincare formulation.
-Especially new facial moisturizers, and experimenting with simple hair detangling products.
 
 Digital art and music (viola/violin).
 You can find me playing a show with one of my local music groups every month or two.
