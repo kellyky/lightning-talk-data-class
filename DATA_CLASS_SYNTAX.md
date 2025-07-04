@@ -33,9 +33,12 @@ puts hobbit.to_s
 => 'The Hobbit was written by J.R.R. Tolkien in 1937'
 ```
 
-### Creating the Data objects
+### Building from the blueprint
 
-Example:
+- Call `.new` or use `[]` notation
+- Use keyword or positional arguments
+
+#### `.new` + keyword arguments
 
 ```ruby
 hobbit = Book.new(title: "The Hobbit", author: "J. R. R. Tolkien", year: 1937)
@@ -51,20 +54,46 @@ hobbit.title
 => "The Hobbit"
 ```
 
-We can create shallow clones of an instance of Data
-Example:
+#### Bracket Notation + Positional arguments
 
 ```ruby
+Location = Data.define(:latitude, :longitude)
+=> Location
+```
 
->> philadelphia = Location[39.9526, -75.1652]
+We can use positional arguments but need to take care with the order.
+
+```ruby
+philadelphia = Location[39.9526, -75.1652]
 => #<data Location latitude=39.9526, longitude=-75.1652>
->> philadelphia.latitude
+
+philadelphia.latitude
 => 39.9526
->> philadelphia.longitude
+
+philadelphia = Location[-75.1652, 39.9526]
+=> #<data Location latitude=-75.1652, longitude=39.9526>
+
+philadelphia.latitude
 => -75.1652
 ```
 
-- Initialize with keyword arguments
-- Initialize with positional arguments
-- Initialize with brackets (either with keyword or positional arguments)
+#### Bracket Notation + Keyword Arguments
+
+Note that with keyword arguments, we have flexibility in the order we pass arguments.
+
+```ruby
+philadelphia = Location[latitude: 39.9526, longitude:-75.1652]
+=> #<data Location latitude=39.9526, longitude=-75.1652>
+
+philadelphia.latitude
+=> 39.9526
+```
+
+```ruby
+philadelphia = Location[longitude:-75.1652, latitude: 39.9526]
+=> #<data Location latitude=39.9526, longitude=-75.1652>
+
+philadelphia.latitude
+=> 39.9526
+```
 
