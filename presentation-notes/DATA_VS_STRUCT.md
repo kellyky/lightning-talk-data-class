@@ -52,9 +52,11 @@ If we try to define a writer method on `House` and update that value, `FrozenErr
 => #<data House rooms=5, area=700, floors=1>
 >> cottage.floors = 2
 (irb):21:in `floors=': can't modify frozen House: #<data House rooms=5, area=700, floors=1> (FrozenError)
+>> cottage.frozen?
+=> true
 ```
 
-But what we _can_ do with a Data object is create a copy of it and update any of the attribute values.
+What we _can_ do with a Data object is clone it and update any of the attribute values.
 
 ```irb
 >> House = Data.define(:rooms, :area, :floors)
@@ -76,6 +78,8 @@ With Struct, we can renovate.
 => 2
 >> ranch
 => #<struct House rooms=5, area=1200, floors=2>
+>> ranch.frozen?
+=> false
 ```
 
 ## Built-in Methods
