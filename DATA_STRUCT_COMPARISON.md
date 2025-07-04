@@ -53,7 +53,7 @@ If we try to define a setter method on `House` and update that value, `FrozenErr
 (irb):21:in `floors=': can't modify frozen House: #<data House rooms=5, area=700, floors=1> (FrozenError)
 ```
 
-But what we _can_ do with a Data object is clone it and update any of the attribute values.
+But what we _can_ do with a Data object is create a copy of it and update any of the attribute values.
 
 ```irb
 >> House = Data.define(:rooms, :area, :floors)
