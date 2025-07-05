@@ -36,9 +36,10 @@ Data also has fewer (and different) 'built-in' methods than Struct.
 (irb):3:in `<main>': undefined method `floors=' for an instance of House (NoMethodError)
 ```
 
-This tells us there is no 'setter' method to use.
+This tells us there is no 'writer' (sometimes called "setter" in other
+languages) method to use.
 
-If we try to define a setter method on `House` and update that value, `FrozenError` is raised.
+If we try to define a writer method on `House` and update that value, `FrozenError` is raised.
 
 ```irb
 >> House = Data.define(:rooms, :area, :floors) do
