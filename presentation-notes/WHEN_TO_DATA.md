@@ -1,8 +1,4 @@
-# Use Cases for Data class
-
-Use Data class to create Data Objects when attribute values should not change, once defined.
-
-## Example: Temperature Conversions
+## Temperature Conversions
 
 From a Temperature Conversion project, we use the Data class to define `Unit` and each 'unit' (e.g. Celsius) is an instance of `Unit`.
 

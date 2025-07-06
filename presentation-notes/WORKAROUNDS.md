@@ -1,14 +1,4 @@
-## When Not to Use Data Class
-
-Consider how we want to **use** the object.
-
-Consider how we want to **communicate the intent** for that object.
-
-### Usage Considerations
-
-Do we know that we want more built-in flexibility?
-Will we want to update behavior to the instance after it is created?
-E.g. update attributes, add behavior/methods, monkey patch, etc.
+## Immutability Workarounds, Sort of
 
 We *can* work (arguably) against the intent of `Data` in some ways.
 
