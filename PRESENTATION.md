@@ -13,13 +13,12 @@ Gauge the audience: who is using Data class?
 - [Example in the Wild][example]
 - [Data Chaos and Immutability Workarounds][workarounds]
 
-[description]: ./DESCRIPTION.md
-[syntax]: ./SYNTAX.md
-[data-v-struct]: ./DATA_VS_STRUCT.md
-[to-data-or-not]: ./CONSIDERATIONS.md
-[use-data]: ./WHEN_TO_DATA.md
-[example]: ./EXAMPLE.md
-[workarounds]: ./WORKAROUNDS.md
+[description]: ./presentation-notes/DESCRIPTION.md
+[syntax]: ./presentation-notes/SYNTAX.md
+[data-v-struct]: ./presentation-notes/DATA_VS_STRUCT.md
+[to-data-or-not]: ./presentation-notes/CONSIDERATIONS.md
+[example]: ./presentation-notes/WHEN_TO_DATA.md
+[workarounds]: ./presentation-notes/WORKAROUNDS.md
 
 ## Conclusion
 
