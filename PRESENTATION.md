@@ -14,3 +14,8 @@
 [example]: ./presentation-notes/WHEN_TO_DATA.md
 [workarounds]: ./presentation-notes/WORKAROUNDS.md
 
+## Discover
+
+Scan for slides, resources, and to connect!
+![Scan to get slides, resources & connect](./welcome-page-qr-code.png)
+
