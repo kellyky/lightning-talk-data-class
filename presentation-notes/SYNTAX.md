@@ -12,7 +12,7 @@ We can define methods as well if we pass it a block.
 
 ```ruby
 Book = Data.define(:title, :author, :year) do
-  SUMMARY = '%<title>s was written by %<author>s in %<year>i'
+  SUMMARY = '%<title>s was written by %<author>s in %<year>i.'
 
   def to_s
     SUMMARY % {title:, author:, year:}
@@ -22,8 +22,9 @@ end
 
 ```ruby
 hobbit = Book.new("The Hobbit", "J.R.R. Tolkien", 1937)
-puts hobbit.to_s
-=> 'The Hobbit was written by J.R.R. Tolkien in 1937'
+puts hobbit
+=> nil
+'The Hobbit was written by J.R.R. Tolkien in 1937.'
 ```
 
 ### Building from the blueprint
