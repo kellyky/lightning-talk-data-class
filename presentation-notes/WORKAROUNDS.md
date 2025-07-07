@@ -2,22 +2,22 @@
 
 We *can* work (arguably) against the intent of `Data` in some ways.
 
-For example, when an attribute is set to a hash, we can update values in the hash.
+For example, when an attribute is set to a `Hash`, we can update values in the hash.
 
 ```ruby
 ColorCounts = Data.define(:color_tally)
-=> Colorcounts
+# => Colorcounts
 
 screen_colors = ColorCounts.new({ red: 0, blue: 0, green: 0})
-=> #<data ColorCounts color_tally={:red=>0, :blue=>0, :green=>0}>
+# => #<data ColorCounts color_tally={:red=>0, :blue=>0, :green=>0}>
 
 # Update a value in `color_tally`
 screen_colors.color_tally[:red] += 5
-=> 5
+# => 5
 
 # Note that the value for  `:red` has been updated
 screen_colors.color_tally
-=> {:red=>5, :blue=>0, :green=>0}
+# => {:red=>5, :blue=>0, :green=>0}
 ```
 
 We can also workaround to update a (non-frozen) string.
@@ -26,16 +26,16 @@ Example:
 
 ```ruby
 Person = Data.define(:name)
-=> Person
+# => Person
 
 me = Person.new(name: 'Kelly')
-=> #<data Person name="Popko">
+# => #<data Person name="Popko">
 
 me.name.prepend 'Kelly '
-=> 'Kelly Popko'
+# => 'Kelly Popko'
 
 me.name
-=> 'Kelly Popko'
+# => 'Kelly Popko'
 ```
 
 So we are not completely without the ability to modify or create certain workarounds.
