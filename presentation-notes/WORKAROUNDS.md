@@ -8,7 +8,7 @@ For example, when an attribute is set to a `Hash`, we can update values in the h
 ColorCounts = Data.define(:color_tally)
 # => Colorcounts
 
-screen_colors = ColorCounts.new({ red: 0, blue: 0, green: 0})
+screen_colors = ColorCounts.new({red: 0, blue: 0, green: 0})
 # => #<data ColorCounts color_tally={:red=>0, :blue=>0, :green=>0}>
 
 # Update a value in `color_tally`
