@@ -11,7 +11,12 @@ This brings me to... You might want to use Data class if...
 ## Body
 
 What is `Data` class?
-- [Description][description]
+
+- The Data class was introduced to Ruby in Ruby 3.2, to:
+  - 'define simple classes for value-alike'
+  - store immutable atomic values
+
+- The QR code includes links to conversations around Data's introduction to Ruby, as well as these notes and where to find me.
 
 How do we use it?
 - [Syntax][syntax]
@@ -22,7 +27,6 @@ How does it compare to `Struct`?
 - [To Data or Not to Data?][to-data-or-not]
 - [Data Chaos and Immutability Workarounds][workarounds]
 
-[description]: ./presentation-notes/DESCRIPTION.md
 [syntax]: ./presentation-notes/SYNTAX.md
 [data-v-struct]: ./presentation-notes/DATA_VS_STRUCT.md
 [to-data-or-not]: ./presentation-notes/CONSIDERATIONS.md
