@@ -15,7 +15,6 @@ What is `Data` class?
 
 How do we use it?
 - [Syntax][syntax]
-- [Example in the Wild][example]
 
 How does it compare to `Struct`?
 - [Data vs. Struct][data-v-struct]
@@ -27,7 +26,6 @@ How does it compare to `Struct`?
 [syntax]: ./presentation-notes/SYNTAX.md
 [data-v-struct]: ./presentation-notes/DATA_VS_STRUCT.md
 [to-data-or-not]: ./presentation-notes/CONSIDERATIONS.md
-[example]: ./presentation-notes/WHEN_TO_DATA.md
 [workarounds]: ./presentation-notes/WORKAROUNDS.md
 
 ## Conclusion
