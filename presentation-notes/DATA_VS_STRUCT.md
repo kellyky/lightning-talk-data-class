@@ -10,30 +10,31 @@ Data also has fewer (and different) 'built-in' methods than Struct.
 
 ### Data
 
-```irb
->> House = Data.define(:rooms, :area, :floors)
->> ranch = House.new(rooms: 5, area: 1200, floors: 1)
-=> #<data House rooms=5, area=1200, floors=1>
+```ruby
+House = Data.define(:rooms, :area, :floors)
+ranch = House.new(rooms: 5, area: 1200, floors: 1)
+# => #<data House rooms=5, area=1200, floors=1>
 ```
 
 ### Struct
 
-```irb
->> House = Struct.new(:rooms, :area, :floors, keyword_init: true)
->> ranch = House.new(rooms: 5, area: 1200, floors: 1)
-=> #<struct House rooms=5, area=1200, floors=1>
+```ruby
+House = Struct.new(:rooms, :area, :floors, keyword_init: true)
+ranch = House.new(rooms: 5, area: 1200, floors: 1)
+# => #<struct House rooms=5, area=1200, floors=1>
 ```
 
 ## Mutability: Attempt to Renovate the house...
 
 ### Data
 
-```irb
->> House = Data.define(:rooms, :area, :floors)
->> ranch = House.new(rooms: 5, area: 1200, floors: 1)
-=> #<data House rooms=5, area=1200, floors=1>
->> ranch.floors = 2
-(irb):3:in `<main>': undefined method `floors=' for an instance of House (NoMethodError)
+```ruby
+House = Data.define(:rooms, :area, :floors)
+ranch = House.new(rooms: 5, area: 1200, floors: 1)
+# => #<data House rooms=5, area=1200, floors=1>
+
+ranch.floors = 2
+# (irb):3:in `<main>': undefined method `floors=' for an instance of House (NoMethodError)
 ```
 
 This tells us there is no 'writer' (sometimes called "setter" in other
@@ -41,52 +42,58 @@ languages) method to use.
 
 If we try to define a writer method on `House` and update that value, `FrozenError` is raised.
 
-```irb
->> House = Data.define(:rooms, :area, :floors) do
->>   def floors=(quantity)
->>     @floors = quantity
->>   end
->> end
-=> House
->> cottage = House.new(rooms: 5, area: 700, floors: 1)
-=> #<data House rooms=5, area=700, floors=1>
->> cottage.floors = 2
-(irb):21:in `floors=': can't modify frozen House: #<data House rooms=5, area=700, floors=1> (FrozenError)
->> cottage.frozen?
-=> true
+```ruby
+House = Data.define(:rooms, :area, :floors) do
+  def floors=(quantity)
+    @floors = quantity
+  end
+end
+# => House
+
+cottage = House.new(rooms: 5, area: 700, floors: 1)
+# => #<data House rooms=5, area=700, floors=1>
+
+cottage.floors = 2
+# (irb):21:in `floors=': can't modify frozen House: #<data House rooms=5, area=700, floors=1> (FrozenError)
+cottage.frozen?
+# => true
 ```
 
 What we _can_ do with a Data object is clone it and update any of the attribute values.
 
-```irb
->> House = Data.define(:rooms, :area, :floors)
->> cottage = House.new(rooms: 5, area: 1200, floors: 1)
-=> #<data House rooms=5, area=1200, floors=1>
->> two_story_cottage = cottage.with(floors: 2)
-=> #<data House rooms=5, area=1200, floors=2>
+```ruby
+House = Data.define(:rooms, :area, :floors)
+cottage = House.new(rooms: 5, area: 1200, floors: 1)
+# => #<data House rooms=5, area=1200, floors=1>
+
+two_story_cottage = cottage.with(floors: 2)
+# => #<data House rooms=5, area=1200, floors=2>
 ```
 
 ### Struct
 
 With Struct, we can renovate.
 
-```irb
->> House = Struct.new(:rooms, :area, :floors, keyword_init: true)
->> ranch = House.new(rooms: 5, area: 1200, floors: 1)
-=> #<struct House rooms=5, area=1200, floors=1>
->> ranch.floors = 2
-=> 2
->> ranch
-=> #<struct House rooms=5, area=1200, floors=2>
->> ranch.frozen?
-=> false
+```ruby
+House = Struct.new(:rooms, :area, :floors, keyword_init: true)
+ranch = House.new(rooms: 5, area: 1200, floors: 1)
+# => #<struct House rooms=5, area=1200, floors=1>
+
+ranch.floors = 2
+# => 2
+
+ranch
+# => #<struct House rooms=5, area=1200, floors=2>
+
+ranch.frozen?
+# => false
 ```
 
 ## Built-in Methods
 
 ### Data Class
 
-```irb
+```ruby
 >> Data.methods(false)
 => [:define]
 >> Data.instance_methods(false)
@@ -107,7 +114,7 @@ With Struct, we can renovate.
 
 ### Struct
 
-```irb
+```ruby
 >> Struct.methods(false)
 => [:new]
 >> Struct.instance_methods(false)
@@ -139,7 +146,7 @@ With Struct, we can renovate.
 
 ### Comparison
 
-```irb
+```ruby
 >> struct_methods - data_methods
 =>
 [:to_a,
