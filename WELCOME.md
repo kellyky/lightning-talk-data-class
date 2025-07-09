@@ -7,7 +7,7 @@ Here’s everything you need in one place:
 
 ## Presentation
 
-- [You might want a Data object - Notes](./PRESENTATION.md)
+- [You might want a Data object - Notes](./SPEAKER_NOTES.md)
 - [You might want a Data object - Project](https://sr.ht/~kells/you-might-want-a-data-object-talk/)
 
 ---
