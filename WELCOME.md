@@ -4,6 +4,8 @@
 
 Subscribe by sending an e-mail to [~kells/ruby-data-class-lightning-talk+subscribe@lists.sr.ht][subscribe].
 
+[![Watch the talk][thumbnail]][video]
+
 ## Overview
 
 RailsConf 2025 _Lighting Talk: You might want a Data Object if..._
@@ -42,3 +44,5 @@ Writeups to follow on my [Dev][dev] profile.
 [linkedin]: https://www.linkedin.com/in/kelly-popko/
 [github]: https://github.com/kellyky/
 [dev]: https://dev.to/kelpopko
+[video]: https://www.youtube.com/watch?v=XucQAvZanfM
+[thumbnail]: https://img.youtube.com/vi/XucQAvZanfM/0.jpg
