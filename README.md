@@ -1,5 +1,7 @@
 # You Might Want a `Data` Object
 
+[![Watch the talk](https://img.youtube.com/vi/XucQAvZanfM/0.jpg)](https://www.youtube.com/watch?v=XucQAvZanfM)
+
 Thanks for checking out my talk!
 
 ---
