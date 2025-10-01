@@ -24,6 +24,10 @@ Explore [notes][data-notes] with code examples.
 - [Ruby Data Class — Pull Request #6353][pull-request]
 - [Official Ruby `Data` Class Documentation][documentation-official]
 
+## Acknowledgements / Shoutouts
+
+Huge thank-you to my mentor, Victor Goff/KOTP, as well as my guide, Erin Pintozzi, and the RailsConf2025 Scholars and Guides program. 🙏
+
 ## Connect with Me
 
 [LinkedIn][linkedin] | [GitHub][github]

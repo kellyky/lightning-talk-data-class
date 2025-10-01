@@ -24,6 +24,10 @@ Suggested Git Configuration Adjustments:
   annotate = yes
 ```
 
+## Acknowledgements / Shoutouts
+
+Huge thank-you to my mentor, Victor Goff/KOTP, as well as my guide, Erin Pintozzi, and the RailsConf2025 Scholars and Guides program. 🙏
+
 [1]: https://sr.ht/~kells/you-might-want-a-data-object-talk
 [2]: https://git.sr.ht/~kells/railsconf2025-lightning-talk/
 [3]: https://lists.sr.ht/~kells/ruby-data-class-lightning-talk
